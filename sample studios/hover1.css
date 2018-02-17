@@ -1,0 +1,9 @@
+#myhover {
+width: 20px; /*width of the image */
+height: 20px; /* height of the image */
+background:url(background/image/url.jpg) no-repeat;
+}
+
+#myhover:hover {
+background:url(background/image/url2.jpg) no-repeat;
+}
