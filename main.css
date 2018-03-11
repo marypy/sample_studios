@@ -346,23 +346,37 @@ a>#circle:hover{fill: #BABABA;
 }
 
 
-.toggle {
-    display: none;
+#toggle {
+        color: orangered;
+        justify-items:center;
+        text-decoration: none;
+        text-decoration-style: none;
+        padding-bottom: 10px;
+        display: none;
   }
+
+.show-menu {display:none}
 
 @media only screen and (max-width: 950px){
     .grid-wrapper {
         display:grid;
-        grid-template-columns: 1fr;
-        grid-template-rows:auto;
+        grid-gap: 2px;
+        grid-template-columns:1fr;
+        grid-template-rows: auto;
         
         grid-template-areas: "logo"
-                            "header"
-                            "menu"
-                            "main"
-                            "table"
-                            "footer"
+                             "header"
+                             "button"
+                             "menu"
+                             "main"
+                             "table"
+                             "footer"
     }
+    #main>div>img{
+        max-width: 300px;
+    }
+    
+
     
     #logo>img{
         max-width: 100px;
@@ -372,43 +386,105 @@ a>#circle:hover{fill: #BABABA;
     #header{
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 3fr 1fr;
-        font-size: 18px;    
+        grid-template-rows: 2fr 1fr;
+        font-size: 18px;
     }
-    
     #header>div>h1{
         letter-spacing: normal
     }
-    
     #header>div{
         justify-self:center;
-        align-self:center;
         }
-    #header>div>a{
-        padding-bottom: 10px
-    }
-    
     #header>div>a>img{
-       padding: 4px
+        padding: 5px;
+    
     }
     
+/*
   .toggle{
         display:block;
         color: orangered;
-        justify-items:center;
         text-decoration: none
     }
+*/
+
+    /*
+added by c.c. on 8/3/18
+from https://medialoot.com/blog/how-to-create-a-responsive-navigation-menu-using-only-css/
+Style 'show menu' label button and hide it by default
+*/
+.show-menu {
+/*    added by m.p. om 10.03*/
+    display: block;
+    grid-area: button;
+    text-decoration: none;
+    font-size: 12px;
+    color: orangered;
+
+    text-align: center;
+        position: sticky;
+        top:0;
+        font-size:18px;
+
+        padding:.4em;
+    /*    suppressed by m.p. on 10.03*/
+/*    display: none;*/
+}
+/*Hide checkbox*/
+input[type=checkbox]{
+    display: none;
+}
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu{
+    justify-self:end;
+/*    transformed into "display: grid" by m.p. on 10.03*/
+    display: grid;
+    transform: translateX(340px);
+}
+
+/*
+end of styles added by c.c.
+*/
+
+    /*
+	added by c.c. 8/3/18
+	from https://medialoot.com/blog/how-to-create-a-responsive-navigation-menu-using-only-css/
+    Display 'show menu' link
+    */
     
+/*    Suppressed by m.p. on 10.03*/
+/*
+    .show-menu {
+        display:block;
+        position: sticky;
+        top:0;
+        font-size:18px;
+        padding:.4em;
+    }
+*/
+
+    /*
+    end of style added by c.c.
+    */
+
+
    #menu {
-        position: fixed; 
+        position: absolute; 
+        z-index: 1;
         display:grid;
-        background-color: #f9f9f9;
-        padding: 20px;
+        background-color: white;
+        padding: 7px;
+        font-size:14px;
         top: 0;
         bottom: 0;
-        width: 300px;
+        width: 150px;
         left: -340px;
         transition: transform .3s ease-in-out;
+    }
+    
+    .dropdown-content{
+        min-width: 20px;
+        padding: 0;
     }
    
     #menu>ul>li>a, #menu>nav>span{
@@ -443,9 +519,8 @@ a>#circle:hover{fill: #BABABA;
         display:grid;
         grid-template-columns: auto;
     }
-  #menu:target {
+  /*#menu:target {
     transform: translateX(340px);
-      
-  }    
+  }  */  
      
 }
