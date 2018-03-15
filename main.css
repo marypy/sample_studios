@@ -44,7 +44,6 @@ background-color: #f9f9f9;
 }
 #header>div>a>img {
     max-width: auto;
-/*    filter: drop-shadow(10px 10px 8px #707070);*/
     max-height: 30px;
     padding-left: 5%
     
@@ -372,12 +371,8 @@ a>#circle:hover{fill: #BABABA;
                              "table"
                              "footer"
     }
-    #main>div>img{
-        max-width: 300px;
-    }
     
-
-    
+ 
     #logo>img{
         max-width: 100px;
         height: auto
@@ -400,19 +395,6 @@ a>#circle:hover{fill: #BABABA;
     
     }
     
-/*
-  .toggle{
-        display:block;
-        color: orangered;
-        text-decoration: none
-    }
-*/
-
-    /*
-added by c.c. on 8/3/18
-from https://medialoot.com/blog/how-to-create-a-responsive-navigation-menu-using-only-css/
-Style 'show menu' label button and hide it by default
-*/
 .show-menu {
 /*    added by m.p. om 10.03*/
     display: block;
@@ -420,15 +402,16 @@ Style 'show menu' label button and hide it by default
     text-decoration: none;
     font-size: 12px;
     color: orangered;
-
+    background-color: rgba(249,249,249, 0.9);
     text-align: center;
+    z-index: 2;
         position: sticky;
         top:0;
         font-size:18px;
-
         padding:.4em;
-    /*    suppressed by m.p. on 10.03*/
-/*    display: none;*/
+        z-index: 0;
+    transition: all 0.4s ease-in-out;
+
 }
 /*Hide checkbox*/
 input[type=checkbox]{
@@ -437,39 +420,13 @@ input[type=checkbox]{
 /*Show menu when invisible checkbox is checked*/
 input[type=checkbox]:checked ~ #menu{
     justify-self:end;
-/*    transformed into "display: grid" by m.p. on 10.03*/
     display: grid;
     transform: translateX(340px);
 }
 
-/*
-end of styles added by c.c.
-*/
-
-    /*
-	added by c.c. 8/3/18
-	from https://medialoot.com/blog/how-to-create-a-responsive-navigation-menu-using-only-css/
-    Display 'show menu' link
-    */
-    
-/*    Suppressed by m.p. on 10.03*/
-/*
-    .show-menu {
-        display:block;
-        position: sticky;
-        top:0;
-        font-size:18px;
-        padding:.4em;
-    }
-*/
-
-    /*
-    end of style added by c.c.
-    */
-
 
    #menu {
-        position: absolute; 
+        position: fixed;
         z-index: 1;
         display:grid;
         background-color: white;
@@ -519,8 +476,6 @@ end of styles added by c.c.
         display:grid;
         grid-template-columns: auto;
     }
-  /*#menu:target {
-    transform: translateX(340px);
-  }  */  
+
      
 }
