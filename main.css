@@ -27,6 +27,9 @@ background-color: #f9f9f9;
     align-self: center;
 }
 #header{
+    padding-left: 20px;
+    font-size: 28px;
+    grid-area: header;
     display:grid;
     grid-template-columns: 4fr 1fr 1fr;
     grid-auto-columns: auto;
@@ -107,22 +110,12 @@ background-color: #f9f9f9;
     display: block;
     list-style: none;}
 
-#here{color: orangered;
+#here, #here>a{color: orangered;
 }
-#here>a{color:orangered;
-text-decoration: none}
-
-
   
 #menu>nav>ul>li{ 
     display: block;
     color:orangered}
-
-#header{
-    padding-left: 20px;
-    grid-area: header;
-    font-size: 28px}
-
 
 #main {
     
@@ -130,8 +123,9 @@ text-decoration: none}
     grid-area: main;
     display: grid;
     padding-right: 10px;
-        grid-gap:10px;
-        grid-template-columns: 
+    grid-gap:10px;
+    padding-bottom: 20px;
+    grid-template-columns: 
             repeat(
                 auto-fill,
                 minmax(400px, 1fr));
@@ -141,6 +135,7 @@ text-decoration: none}
     display:grid;
     grid-area: main;
     grid-gap: 10px;
+    padding-bottom: 20px;
     grid-template-columns: 
             repeat(auto-fill, 
                 minmax(270px, 1fr));
@@ -156,10 +151,9 @@ text-decoration: none}
     max-height: 240px; 
     width: auto
 }
-#mainmembers>div>p{
-    padding-left: 10px
-}
+
     #mainmembers>div>p>a{
+        padding-left: 10px;
         text-decoration: none;
         color: #707070;}
     
@@ -198,6 +192,7 @@ a>#circle:hover{fill: #BABABA;
     font-size: 16px;
     letter-spacing: 0.2em
 }
+
 #table{grid-area: table;
     margin: 10px;
     padding: 10px;
@@ -345,16 +340,11 @@ a>#circle:hover{fill: #BABABA;
 }
 
 
-#toggle {
-        color: orangered;
-        justify-items:center;
-        text-decoration: none;
-        text-decoration-style: none;
-        padding-bottom: 10px;
-        display: none;
-  }
-
 .show-menu {display:none}
+
+input[type=checkbox]{
+    display: none;
+}
 
 @media only screen and (max-width: 950px){
     .grid-wrapper {
@@ -396,7 +386,6 @@ a>#circle:hover{fill: #BABABA;
     }
     
 .show-menu {
-/*    added by m.p. om 10.03*/
     display: block;
     grid-area: button;
     text-decoration: none;
@@ -452,6 +441,7 @@ input[type=checkbox]:checked ~ #menu{
     font-size: 13px;
     grid-area: main;
     display: grid;
+        padding: 0;
         justify-self:center;
         grid-template-columns: 
             repeat(auto-fill, 
@@ -462,8 +452,7 @@ input[type=checkbox]:checked ~ #menu{
     }
     
    #poster img:hover {
-
-    transform: none
+       transform: none
  }
 
     
